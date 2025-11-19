@@ -1,6 +1,7 @@
 import { ExternalLink, FileText } from "lucide-react";
 import wtcIcon from "@/assets/wtc-icon.png";
 import mallocIcon from "@/assets/malloc-icon.png";
+import russIcon from "@/assets/russ-icon.jpg";
 
 const Projects = () => {
   const projects = [
@@ -23,6 +24,7 @@ const Projects = () => {
       description: "Current project in development during college studies. An ambitious title exploring innovative gameplay mechanics and narrative design.",
       tags: ["In Development", "Unity", "Narrative Design"],
       link: "https://srijith-gopalakrishnan.itch.io/russ-fight-the-power",
+      icon: russIcon,
     },
     {
       title: "Documents",
