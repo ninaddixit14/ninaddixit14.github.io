@@ -1,12 +1,18 @@
-import { Mail, Linkedin, Github } from "lucide-react";
+import { Mail, Linkedin, Github, Phone } from "lucide-react";
 
 const Connect = () => {
   const socialLinks = [
     {
       name: "Email",
       icon: Mail,
-      link: "mailto:ninad.dixit@example.com",
-      handle: "ninad.dixit@example.com",
+      link: "mailto:ninaddixit14@gmail.com",
+      handle: "ninaddixit14@gmail.com",
+    },
+    {
+      name: "Phone",
+      icon: Phone,
+      link: "tel:+916362860544",
+      handle: "+91 6362860544",
     },
     {
       name: "LinkedIn",
