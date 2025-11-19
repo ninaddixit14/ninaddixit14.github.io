@@ -21,9 +21,8 @@ const Hero = () => {
                 Game Developer & Designer
               </p>
             </div>
-            <p className="text-lg text-foreground/80 max-w-xl">
-               student passionate about creating immersive gaming experiences. Specializing in gameplay mechanics, level design, and bringing creative visions to life.
-            </p>
+            <p className="text-lg text-foreground/80 max-w-xl">Passionate about creating immersive gaming experiences. Specializing in gameplay mechanics, level design, and bringing creative visions to life.
+          </p>
             <div className="flex gap-4 justify-center md:justify-start">
               <a href="#projects" className="px-8 py-3 bg-gradient-primary text-primary-foreground rounded-lg font-semibold hover:shadow-glow-primary transition-all duration-300 hover:scale-105">
                 View Projects
