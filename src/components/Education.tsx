@@ -1,8 +1,6 @@
 import { GraduationCap } from "lucide-react";
-
 const Education = () => {
-  return (
-    <section id="education" className="py-20 px-4 sm:px-6 lg:px-8">
+  return <section id="education" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl font-bold mb-12 text-center">
           <span className="bg-gradient-primary bg-clip-text text-transparent">
@@ -15,9 +13,7 @@ const Education = () => {
               <GraduationCap className="w-8 h-8 text-primary" />
             </div>
             <div className="flex-1">
-              <h3 className="text-2xl font-bold text-foreground mb-2">
-                Bachelor's Degree in Game Development
-              </h3>
+              <h3 className="text-2xl font-bold text-foreground mb-2">Bachelor of Computer Science and Game Development                  </h3>
               <p className="text-primary font-semibold mb-3">
                 Currently in 3rd Year
               </p>
@@ -31,8 +27,6 @@ const Education = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Education;
