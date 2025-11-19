@@ -4,7 +4,7 @@ const Hero = () => {
       <div className="max-w-6xl w-full mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-center gap-12">
           {/* Profile Image */}
-          <div className="relative group">
+          <div className="relative group mt-8">
             <div className="absolute -inset-1 bg-gradient-primary rounded-full blur-lg opacity-60 group-hover:opacity-100 transition duration-500"></div>
             <img src={profilePhoto} alt="Ninad Dixit - Game Developer" className="relative w-[28rem] h-[28rem] rounded-full object-cover border-4 border-primary/20" />
           </div>
