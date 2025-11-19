@@ -1,5 +1,6 @@
 import { ExternalLink, FileText } from "lucide-react";
 import wtcIcon from "@/assets/wtc-icon.png";
+import mallocIcon from "@/assets/malloc-icon.png";
 
 const Projects = () => {
   const projects = [
@@ -15,6 +16,7 @@ const Projects = () => {
       description: "Fast-paced prototype game developed in Unreal Engine during a game jam. Showcases rapid prototyping skills and creative problem-solving under time constraints.",
       tags: ["Unreal Engine", "Game Jam", "Prototype"],
       link: "https://ninaddixit.itch.io/malloc",
+      icon: mallocIcon,
     },
     {
       title: "Russ, Fight the Power",
