@@ -1,4 +1,5 @@
 import { ExternalLink, FileText } from "lucide-react";
+import wtcIcon from "@/assets/wtc-icon.png";
 
 const Projects = () => {
   const projects = [
@@ -7,6 +8,7 @@ const Projects = () => {
       description: "A 2.5D roguelike survivor game with 25+ unique ability cards to play with. Features dynamic gameplay with diverse card combinations and strategic depth.",
       tags: ["Roguelike", "Unity", "Game Design"],
       link: "https://ninugames.itch.io/what-the-creature",
+      icon: wtcIcon,
     },
     {
       title: "Malloc",
@@ -44,9 +46,14 @@ const Projects = () => {
               className="bg-gradient-card p-6 rounded-xl border border-primary/10 hover:border-primary/30 hover:shadow-glow-accent transition-all duration-300 group"
             >
               <div className="flex items-start justify-between mb-4">
-                <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
+                <div className="flex items-center gap-3">
+                  {project.icon && (
+                    <img src={project.icon} alt={`${project.title} icon`} className="w-12 h-12 rounded-lg object-cover" />
+                  )}
+                  <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                </div>
                 {project.isDocument ? (
                   <FileText className="w-6 h-6 text-primary flex-shrink-0" />
                 ) : (
