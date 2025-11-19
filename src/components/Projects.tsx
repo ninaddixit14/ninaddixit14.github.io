@@ -6,25 +6,25 @@ const Projects = () => {
       title: "WTC, What The Creature!",
       description: "A 2.5D roguelike survivor game with 25+ unique ability cards to play with. Features dynamic gameplay with diverse card combinations and strategic depth.",
       tags: ["Roguelike", "Unity", "Game Design"],
-      link: "#", // User will add actual link
+      link: "https://ninugames.itch.io/what-the-creature",
     },
     {
       title: "Malloc",
       description: "Fast-paced prototype game developed in Unreal Engine during a game jam. Showcases rapid prototyping skills and creative problem-solving under time constraints.",
       tags: ["Unreal Engine", "Game Jam", "Prototype"],
-      link: "#",
+      link: "https://ninaddixit.itch.io/malloc",
     },
     {
       title: "Russ, Fight the Power",
       description: "Current project in development during college studies. An ambitious title exploring innovative gameplay mechanics and narrative design.",
       tags: ["In Development", "Unity", "Narrative Design"],
-      link: "#",
+      link: "https://srijith-gopalakrishnan.itch.io/russ-fight-the-power",
     },
     {
       title: "Documents",
       description: "Collection of game design documents, technical documentation, and research papers developed throughout my academic journey.",
       tags: ["Documentation", "Game Design", "Research"],
-      link: "#",
+      link: "https://drive.google.com/drive/folders/1LkdhEufyAnk8N17kA8eFRrpcrcCi9b6j",
       isDocument: true,
     },
   ];

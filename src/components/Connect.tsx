@@ -1,30 +1,24 @@
-import { Mail, Linkedin, Github, Twitter } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
 
 const Connect = () => {
   const socialLinks = [
     {
       name: "Email",
       icon: Mail,
-      link: "mailto:ninad.dixit@example.com", // User can update
+      link: "mailto:ninad.dixit@example.com",
       handle: "ninad.dixit@example.com",
     },
     {
       name: "LinkedIn",
       icon: Linkedin,
-      link: "#", // User will add actual link
-      handle: "linkedin.com/in/ninaddixit",
+      link: "https://www.linkedin.com/in/ninaddixit14/",
+      handle: "linkedin.com/in/ninaddixit14",
     },
     {
       name: "GitHub",
       icon: Github,
-      link: "#",
-      handle: "github.com/ninaddixit",
-    },
-    {
-      name: "Twitter",
-      icon: Twitter,
-      link: "#",
-      handle: "@ninaddixit",
+      link: "https://github.com/balackpanda",
+      handle: "github.com/balackpanda",
     },
   ];
 
