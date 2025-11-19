@@ -2,6 +2,7 @@ import { ExternalLink, FileText } from "lucide-react";
 import wtcIcon from "@/assets/wtc-icon.png";
 import mallocIcon from "@/assets/malloc-icon.png";
 import russIcon from "@/assets/russ-icon.jpg";
+import documentsIcon from "@/assets/documents-icon.png";
 
 const Projects = () => {
   const projects = [
@@ -32,6 +33,7 @@ const Projects = () => {
       tags: ["Documentation", "Game Design", "Research"],
       link: "https://drive.google.com/drive/folders/1LkdhEufyAnk8N17kA8eFRrpcrcCi9b6j",
       isDocument: true,
+      icon: documentsIcon,
     },
   ];
 
