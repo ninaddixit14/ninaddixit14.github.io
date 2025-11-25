@@ -20,7 +20,7 @@ const Skills = () => {
     {
       title: "Tools & Tech",
       icon: Wrench,
-      skills: ["Git", "Perforce", "Visual Studio", "Photoshop"],
+      skills: ["Git", "Diversion", "Visual Studio", "Photoshop"],
     },
   ];
 
