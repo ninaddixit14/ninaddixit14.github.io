@@ -15,7 +15,7 @@ const Skills = () => {
     {
       title: "Game Design",
       icon: Palette,
-      skills: ["Level Design", "Game Mechanics", "UI/UX"],
+      skills: ["Level Design", "Game Mechanics", "Game engine UI/UX"],
     },
     {
       title: "Tools & Tech",
