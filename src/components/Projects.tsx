@@ -38,7 +38,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="pt-20 pb-12 px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold mb-12 text-center">
           <span className="bg-gradient-primary bg-clip-text text-transparent">
@@ -88,19 +88,6 @@ const Projects = () => {
               </a>
             </div>
           ))}
-        </div>
-        
-        <div className="mt-20 mb-4 text-center">
-          <a
-            href="https://drive.google.com/file/d/1f-Lk6hINOubJrtVgEtcPsX4qKs2vNh4c/view?usp=drive_link"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-primary text-primary-foreground font-semibold rounded-lg hover:shadow-glow-accent transition-all duration-300 hover:scale-105"
-          >
-            <FileText className="w-5 h-5" />
-            View My Resume
-            <ExternalLink className="w-5 h-5" />
-          </a>
         </div>
       </div>
     </section>
