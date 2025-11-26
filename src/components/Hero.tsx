@@ -6,7 +6,7 @@ const Hero = () => {
           {/* Profile Image */}
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-primary rounded-full blur-lg opacity-60 group-hover:opacity-100 transition duration-500"></div>
-            <img src={profilePhoto} alt="Ninad Dixit - Game Developer" className="relative w-[28rem] h-[28rem] rounded-full object-cover border-4 border-primary/20" />
+            <img src={profilePhoto} alt="Ninad Dixit - Game Developer" className="relative w-72 h-72 rounded-full object-cover border-4 border-primary/20" />
           </div>
 
           {/* Text Content */}
