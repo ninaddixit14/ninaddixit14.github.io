@@ -38,7 +38,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="pt-20 pb-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold mb-12 text-center">
           <span className="bg-gradient-primary bg-clip-text text-transparent">
@@ -90,7 +90,7 @@ const Projects = () => {
           ))}
         </div>
         
-        <div className="mt-16 text-center">
+        <div className="mt-20 mb-4 text-center">
           <a
             href="https://drive.google.com/file/d/1f-Lk6hINOubJrtVgEtcPsX4qKs2vNh4c/view?usp=drive_link"
             target="_blank"
