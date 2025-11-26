@@ -23,8 +23,8 @@ const Connect = () => {
     {
       name: "GitHub",
       icon: Github,
-      link: "https://github.com/balackpanda",
-      handle: "github.com/balackpanda",
+      link: "https://github.com/ninaddixit14",
+      handle: "github.com/ninaddixit14",
     },
   ];
 
