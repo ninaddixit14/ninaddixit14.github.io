@@ -98,7 +98,7 @@ const Projects = () => {
             className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-primary text-primary-foreground font-semibold rounded-lg hover:shadow-glow-accent transition-all duration-300 hover:scale-105"
           >
             <FileText className="w-5 h-5" />
-            View My CV
+            View My Resume
             <ExternalLink className="w-5 h-5" />
           </a>
         </div>
