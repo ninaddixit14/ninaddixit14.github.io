@@ -17,9 +17,7 @@ const Hero = () => {
                   Ninad Dixit
                 </span>
               </h1>
-              <p className="text-xl sm:text-2xl text-muted-foreground">
-                Game Developer & Designer
-              </p>
+              <p className="text-xl sm:text-2xl text-muted-foreground">Game Developer </p>
             </div>
             <p className="text-lg text-foreground/80 max-w-xl">Passionate about creating immersive gaming experiences. Specializing in gameplay mechanics, level design, and bringing creative visions to life.
           </p>
