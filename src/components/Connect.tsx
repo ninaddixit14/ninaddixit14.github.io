@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github, Phone, FileText, ExternalLink } from "lucide-react";
+import { Mail, Linkedin, Github, Phone } from "lucide-react";
 
 const Connect = () => {
   const socialLinks = [
@@ -62,19 +62,6 @@ const Connect = () => {
               </a>
             );
           })}
-        </div>
-        
-        <div className="mt-12 text-center">
-          <a
-            href="https://drive.google.com/file/d/1f-Lk6hINOubJrtVgEtcPsX4qKs2vNh4c/view?usp=drive_link"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-primary text-primary-foreground font-semibold rounded-lg hover:shadow-glow-accent transition-all duration-300 hover:scale-105"
-          >
-            <FileText className="w-5 h-5" />
-            View My Resume
-            <ExternalLink className="w-5 h-5" />
-          </a>
         </div>
       </div>
     </section>
