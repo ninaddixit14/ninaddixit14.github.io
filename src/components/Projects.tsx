@@ -15,6 +15,13 @@ const Projects = () => {
       icon: wtcIcon,
     },
     {
+      title: "Gully Gangs: Street Cricket",
+      description: "Gully Gangs is the ultimate 4v4 multiplayer cricket game packed with raw gully vibes, exciting gameplay, and non-stop action – all on your mobile!",
+      tags: ["Unity", "Multiplayer", "Mobile"],
+      link: "https://play.google.com/store/apps/details?id=com.BIG.ClanCricket&hl=en_IN",
+      icon: gullyGangsIcon,
+    },
+    {
       title: "Malloc",
       description: "Fast-paced prototype game developed in Unreal Engine during a game jam. Showcases rapid prototyping skills and creative problem-solving under time constraints.",
       tags: ["Unreal Engine", "Game Jam", "Prototype"],
@@ -27,13 +34,6 @@ const Projects = () => {
       tags: ["In Development", "Unity", "Narrative Design"],
       link: "https://srijith-gopalakrishnan.itch.io/russ-fight-the-power",
       icon: russIcon,
-    },
-    {
-      title: "Gully Gangs: Street Cricket",
-      description: "Gully Gangs is the ultimate 4v4 multiplayer cricket game packed with raw gully vibes, exciting gameplay, and non-stop action – all on your mobile!",
-      tags: ["Unity", "Multiplayer", "Mobile"],
-      link: "https://play.google.com/store/apps/details?id=com.BIG.ClanCricket&hl=en_IN",
-      icon: gullyGangsIcon,
     },
     {
       title: "Documents",
