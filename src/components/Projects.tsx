@@ -3,6 +3,7 @@ import wtcIcon from "@/assets/wtc-icon.png";
 import mallocIcon from "@/assets/malloc-icon.png";
 import russIcon from "@/assets/russ-icon.jpg";
 import documentsIcon from "@/assets/documents-icon.png";
+import gullyGangsIcon from "@/assets/gully-gangs-icon.jpg";
 
 const Projects = () => {
   const projects = [
@@ -26,6 +27,13 @@ const Projects = () => {
       tags: ["In Development", "Unity", "Narrative Design"],
       link: "https://srijith-gopalakrishnan.itch.io/russ-fight-the-power",
       icon: russIcon,
+    },
+    {
+      title: "Gully Gangs: Street Cricket",
+      description: "Gully Gangs is the ultimate 4v4 multiplayer cricket game packed with raw gully vibes, exciting gameplay, and non-stop action – all on your mobile!",
+      tags: ["Unity", "Multiplayer", "Mobile"],
+      link: "https://play.google.com/store/apps/details?id=com.BIG.ClanCricket&hl=en_IN",
+      icon: gullyGangsIcon,
     },
     {
       title: "Documents",
