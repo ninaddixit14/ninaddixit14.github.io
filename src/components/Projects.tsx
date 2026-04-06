@@ -29,6 +29,13 @@ const Projects = () => {
       icon: russIcon,
     },
     {
+      title: "Gully Gangs: Street Cricket",
+      description: "Gully Gangs is the ultimate 4v4 multiplayer cricket game packed with raw gully vibes, exciting gameplay, and non-stop action – all on your mobile!",
+      tags: ["Unity", "Multiplayer", "Mobile"],
+      link: "https://play.google.com/store/apps/details?id=com.BIG.ClanCricket&hl=en_IN",
+      icon: gullyGangsIcon,
+    },
+    {
       title: "Documents",
       description: "Collection of game design documents, technical documentation, and research papers developed throughout my academic journey.",
       tags: ["Documentation", "Game Design", "Research"],
