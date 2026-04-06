@@ -3,6 +3,7 @@ import wtcIcon from "@/assets/wtc-icon.png";
 import mallocIcon from "@/assets/malloc-icon.png";
 import russIcon from "@/assets/russ-icon.jpg";
 import documentsIcon from "@/assets/documents-icon.png";
+import gullyGangsIcon from "@/assets/gully-gangs-icon.jpg";
 
 const Projects = () => {
   const projects = [
