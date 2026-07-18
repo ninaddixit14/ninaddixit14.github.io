@@ -4,6 +4,7 @@ import mallocIcon from "@/assets/malloc-icon.png";
 import russIcon from "@/assets/russ-icon.jpg";
 import documentsIcon from "@/assets/documents-icon.png";
 import gullyGangsIcon from "@/assets/gully-gangs-icon.jpg";
+import boogieGamesIcon from "@/assets/boogie-games-icon.jpg";
 
 const Projects = () => {
   const projects = [
@@ -42,6 +43,13 @@ const Projects = () => {
       link: "https://drive.google.com/drive/folders/1LkdhEufyAnk8N17kA8eFRrpcrcCi9b6j",
       isDocument: true,
       icon: documentsIcon,
+    },
+    {
+      title: "Boogie Games",
+      description: "Play Mini Games & Unlock Real Rewards. Play fun casual mini games, earn Boogie Coins, and unlock discount coupons and vouchers from top shopping and food brands - all from one app.",
+      tags: ["Fun", "Mobile", "Casual"],
+      link: "https://play.google.com/store/apps/details?id=com.FifthOceanStuido.GamesHubTest&pcampaignid=web_share",
+      icon: boogieGamesIcon,
     },
   ];
 
