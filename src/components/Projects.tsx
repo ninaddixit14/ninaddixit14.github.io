@@ -12,7 +12,7 @@ const Projects = () => {
       title: "WTC, What The Creature!",
       description: "A 2.5D roguelike survivor game with 25+ unique ability cards to play with. Features dynamic gameplay with diverse card combinations and strategic depth.",
       tags: ["Roguelike", "Unity", "Game Design"],
-      link: "https://ninugames.itch.io/what-the-creature",
+      link: "https://play.google.com/store/apps/details?id=com.abhitechgames.whatthecreature.survivor.cartoony&pcampaignid=web_share",
       icon: wtcIcon,
     },
     {
