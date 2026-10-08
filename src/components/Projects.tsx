@@ -5,6 +5,7 @@ import russIcon from "@/assets/russ-icon.jpg";
 import documentsIcon from "@/assets/documents-icon.png";
 import gullyGangsIcon from "@/assets/gully-gangs-icon.jpg";
 import boogieGamesIcon from "@/assets/boogie-games-icon.png";
+import signedAwayIcon from "@/assets/signed-away-icon.png";
 
 const Projects = () => {
   const projects = [
