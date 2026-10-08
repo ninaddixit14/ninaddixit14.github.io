@@ -19,7 +19,7 @@ const Education = () => {
                 Bachelor of Computer Science and Game Development
               </h3>
               <p className="text-primary font-semibold mb-3">
-                Currently in 3rd Year
+                Currently in 4th Year
               </p>
               <p className="text-foreground/80 leading-relaxed break-words">
                 Pursuing comprehensive education in game development, covering game design theory, 
