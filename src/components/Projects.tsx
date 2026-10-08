@@ -71,9 +71,10 @@ const Projects = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
-            <div
+            <a
               key={index}
-              className="bg-gradient-card p-6 rounded-xl border border-primary/10 hover:border-primary/30 hover:shadow-glow-accent transition-all duration-300 group"
+              href={project.link}
+              className="block bg-gradient-card p-6 rounded-xl border border-primary/10 hover:border-primary/30 hover:shadow-glow-accent transition-all duration-300 group"
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3">
@@ -103,14 +104,11 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
-              <a
-                href={project.link}
-                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-semibold transition-colors"
-              >
+              <span className="inline-flex items-center gap-2 text-primary group-hover:text-primary/80 font-semibold transition-colors">
                 {project.isDocument ? "View Documents" : "View Project"}
                 <ExternalLink className="w-4 h-4" />
-              </a>
-            </div>
+              </span>
+            </a>
           ))}
         </div>
       </div>
