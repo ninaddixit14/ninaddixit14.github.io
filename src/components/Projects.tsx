@@ -5,6 +5,7 @@ import russIcon from "@/assets/russ-icon.jpg";
 import documentsIcon from "@/assets/documents-icon.png";
 import gullyGangsIcon from "@/assets/gully-gangs-icon.jpg";
 import boogieGamesIcon from "@/assets/boogie-games-icon.png";
+import signedAwayIcon from "@/assets/signed-away-icon.png";
 
 const Projects = () => {
   const projects = [
@@ -42,6 +43,13 @@ const Projects = () => {
       tags: ["In Development", "Unity", "Narrative Design"],
       link: "https://srijith-gopalakrishnan.itch.io/russ-fight-the-power",
       icon: russIcon,
+    },
+    {
+      title: "Signed Away",
+      description: "A chaotic desk game: sign fast, bin the traps, and survive four nightmare coworkers.",
+      tags: ["Unity", "Simulation", "2D"],
+      link: "https://ninaddixit.itch.io/signedaway",
+      icon: signedAwayIcon,
     },
     {
       title: "Documents",
