@@ -31,6 +31,13 @@ const Projects = () => {
       icon: boogieGamesIcon,
     },
     {
+      title: "Signed Away",
+      description: "A chaotic desk game: sign fast, bin the traps, and survive four nightmare coworkers.",
+      tags: ["Unity", "Simulation", "2D"],
+      link: "https://ninaddixit.itch.io/signedaway",
+      icon: signedAwayIcon,
+    },
+    {
       title: "Malloc",
       description: "Fast-paced prototype game developed in Unreal Engine during a game jam. Showcases rapid prototyping skills and creative problem-solving under time constraints.",
       tags: ["Unreal Engine", "Game Jam", "Prototype"],
@@ -43,13 +50,6 @@ const Projects = () => {
       tags: ["In Development", "Unity", "Narrative Design"],
       link: "https://srijith-gopalakrishnan.itch.io/russ-fight-the-power",
       icon: russIcon,
-    },
-    {
-      title: "Signed Away",
-      description: "A chaotic desk game: sign fast, bin the traps, and survive four nightmare coworkers.",
-      tags: ["Unity", "Simulation", "2D"],
-      link: "https://ninaddixit.itch.io/signedaway",
-      icon: signedAwayIcon,
     },
     {
       title: "Documents",
