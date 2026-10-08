@@ -45,6 +45,13 @@ const Projects = () => {
       icon: russIcon,
     },
     {
+      title: "Signed Away",
+      description: "A chaotic desk game: sign fast, bin the traps, and survive four nightmare coworkers.",
+      tags: ["Unity", "Simulation", "2D"],
+      link: "https://ninaddixit.itch.io/signedaway",
+      icon: signedAwayIcon,
+    },
+    {
       title: "Documents",
       description: "Collection of game design documents, technical documentation, and research papers developed throughout my academic journey.",
       tags: ["Documentation", "Game Design", "Research"],
