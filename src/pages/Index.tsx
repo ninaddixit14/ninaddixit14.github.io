@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import SceneCanvas from "@/components/SceneCanvas";
+import HeroPlatformer from "@/components/HeroPlatformer";
+import { Button } from "@/components/ui/button";
 import { PROJECTS, type Project } from "@/data/projects";
-
-const HERO_SHOT = { p: "dusk", seed: 7, sun: 0.7 } as const;
 
 /* Thumbnail columns: keep the rows as even as possible (4 shots read better as 2x2 than 3+1). */
 const COLS: Record<number, number> = { 1: 1, 2: 2, 3: 3, 4: 2, 5: 3, 6: 3, 7: 4, 8: 4 };
@@ -44,19 +44,32 @@ const ProjectSection = ({ p }: { p: Project }) => {
           <dl className="facts">
             {p.role && <div><dt>Role</dt><dd>{p.role}</dd></div>}
             {p.team && <div><dt>Team</dt><dd>{p.team}</dd></div>}
+             {p.duration && <div><dt>Duration</dt><dd>{p.duration}</dd></div>}
             {p.tools && <div><dt>Tools</dt><dd>{p.tools}</dd></div>}
           </dl>
           <a className="btn primary proj-link" href={p.link} target="_blank" rel="noopener noreferrer">{p.linkLabel}</a>
         </div>
         <div className="shots" style={{ gridTemplateColumns: `repeat(${colsFor(p.shots.length)}, 1fr)` }}>
           {p.shots.map((s, i) => (
-            <button key={i} type="button" className={`shot${s.p === "video" ? " video" : ""}`} aria-pressed={i === active} aria-label={s.p === "video" ? `Show ${p.title} trailer` : `Show ${p.title} screenshot ${i + 1}`} onClick={() => select(i)}>
+            <Button variant="ghost" key={i} type="button" className={`shot${s.p === "video" ? " video" : ""}`} aria-pressed={i === active} aria-label={s.p === "video" ? `Show ${p.title} trailer` : `Show ${p.title} screenshot ${i + 1}`} onClick={() => select(i)}>
               <SceneCanvas shot={s} />
-            </button>
+            </Button>
           ))}
           <p className="shots-note">Select a shot to view it full size.</p>
         </div>
       </div>
+      {p.did && p.did.length > 0 && <div className="wrap did">
+        <h4 className="did-h">What I did</h4>
+        {p.did.map((item) => <div className="item" key={item.title}>
+          <div><span className="area">{item.area}</span><h5>{item.title}</h5></div>
+          <dl className="steps">
+            <div><dt>The goal</dt><dd>{item.goal}</dd></div>
+            <div><dt>What I built</dt><dd>{item.built}</dd></div>
+            <div><dt>The result</dt><dd>{item.result}</dd></div>
+          </dl>
+          {p.shots[item.shot] && <figure className="item-media"><div className="frame"><SceneCanvas shot={p.shots[item.shot]} ariaLabel={item.caption} /></div><figcaption>{item.caption}</figcaption></figure>}
+        </div>)}
+      </div>}
     </article>
   );
 };
@@ -69,8 +82,6 @@ const Index = () => {
     window.addEventListener("scroll", on, { passive: true });
     return () => window.removeEventListener("scroll", on);
   }, []);
-
-  const featured = PROJECTS[0];
 
   return (
     <div className="pf">
@@ -87,7 +98,7 @@ const Index = () => {
 
       <main id="top">
         <section className="hero" id="hero">
-          <SceneCanvas shot={HERO_SHOT} animate className="hero-canvas" />
+          <HeroPlatformer />
           <div className="hero-in">
             <div className="wrap">
               <div>
@@ -95,10 +106,6 @@ const Index = () => {
                 <h1><span>Ninad</span><span>Dixit</span></h1>
                 <p className="lede">I build gameplay mechanics and design levels that are fun to move through. Fourth-year game development student.</p>
               </div>
-              <a className="now" href={`#${featured.id}`}>
-                <div className="th"><SceneCanvas shot={featured.shots[0]} /></div>
-                <div><small>Featured project</small><b>{featured.title}</b></div>
-              </a>
             </div>
           </div>
         </section>

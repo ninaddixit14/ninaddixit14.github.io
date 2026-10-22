@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Done
+- Apply the updated HTML layout with top-positioned introduction and playable watercolor opening scene; preserve all seven projects, media, order, skills, and contact links. Optional contribution breakdowns await real details.
 - Rebuild portfolio to match user's HTML design (fonts, dark ink, cyan accent, canvas hero, project tiles, full-width project sections, about, contact).
 - Make project image slots accept real screenshots.
 - WTC: use real WTC pictures; logo is the main image, campfire teaser removed; official trailer added with a play button.
@@ -11,3 +12,4 @@
 
 ## Open
 - Confirm the real Role / Team / Tools / year details per project in `src/data/projects.ts`.
+- Add What I did contribution breakdowns when the user supplies their goals, work, and results; template examples are not real portfolio facts.
