@@ -63,6 +63,11 @@ export const PROJECTS: Project[] = [
     tools: "Unity, C#",
     link: "https://play.google.com/store/apps/details?id=com.abhitechgames.whatthecreature.survivor.cartoony&pcampaignid=web_share",
     linkLabel: "Get it on Google Play",
+    // MOCK "What I did" content – replace each goal/built/result with real details.
+    did: [
+      { area: "Gameplay", title: "25+ ability cards", goal: "Give every run a different build so the roguelike loop stays fresh.", built: "Designed and implemented the ability card system in C#: card data, stacked effects, cooldowns and synergies.", result: "Runs feel unique, and card combinations are the core hook of the game.", shot: 6, caption: "The ability card system in action." },
+      { area: "Combat", title: "Enemy encounters", goal: "Fast, readable combat that scales as the run gets harder.", built: "Built enemy behaviours, hit detection and balance tuning across the forest, swamp and bamboo levels.", result: "Combat stays clear and challenging right through the late run.", shot: 2, caption: "Forest combat." },
+    ],
     shots: [{ p: "img", src: wtcLogo.url }, { p: "video", src: wtcTrailer.url, poster: wtcPoster.url }, { p: "img", src: wtcCombat.url }, { p: "img", src: wtcGrove.url }, { p: "img", src: wtcBamboo.url }, { p: "img", src: wtcSlashing.url }, { p: "img", src: wtcCards.url }],
   },
   {
@@ -75,6 +80,10 @@ export const PROJECTS: Project[] = [
     tools: "Unity, C#, Multiplayer",
     link: "https://play.google.com/store/apps/details?id=com.BIG.ClanCricket&hl=en_IN",
     linkLabel: "Get it on Google Play",
+    did: [
+      { area: "Multiplayer", title: "4v4 online matches", goal: "Smooth real-time matches even on mobile networks.", built: "Worked on the multiplayer flow — matchmaking, state sync and lag handling for 4v4 games.", result: "Four players can play a full gully cricket match over mobile data.", shot: 2, caption: "Multiplayer modes." },
+      { area: "Game feel", title: "Gully cricket rules", goal: "Recreate street-cricket rules and vibes instead of a formal stadium game.", built: "Implemented gully rules, character selection and the City / Village / Chennai grounds.", result: "Matches feel like a street game, not a stadium simulation.", shot: 4, caption: "Ground selection." },
+    ],
     shots: [{ p: "img", src: gullyCover.url, fit: "contain" }, { p: "video", src: gullyTrailer.url, poster: gullyPoster.url }, { p: "img", src: gullyModes.url }, { p: "img", src: gullyCharacters.url }, { p: "img", src: gullyGrounds.url }],
   },
   {
@@ -87,6 +96,10 @@ export const PROJECTS: Project[] = [
     tools: "Unity, C#",
     link: "https://play.google.com/store/apps/details?id=com.FifthOceanStuido.GamesHubTest&pcampaignid=web_share",
     linkLabel: "Get it on Google Play",
+    did: [
+      { area: "Mini games", title: "Casual mini-game roster", goal: "Ship a growing catalog of quick games players return to daily.", built: "Built and polished mini-game loops in Unity and integrated the Boogie Coins reward flow.", result: "50+ mini games shipped, with new games added every week.", shot: 0, caption: "The mini-games catalog." },
+      { area: "Rewards", title: "Coins and vouchers", goal: "Turn playtime into real-world rewards without hurting the game feel.", built: "Wired gameplay to the reward system: coins, coupons and brand vouchers.", result: "Players redeem discount vouchers from shopping and food brands.", shot: 1, caption: "Play games, stack coins." },
+    ],
     shots: [{ p: "img", src: boogieCatalog.url }, { p: "img", src: boogiePromo.url, fit: "contain" }],
   },
   {
@@ -99,6 +112,10 @@ export const PROJECTS: Project[] = [
     tools: "Unity, C#",
     link: "https://ninaddixit.itch.io/signedaway",
     linkLabel: "Play on itch.io",
+    did: [
+      { area: "Gameplay", title: "Desk chaos loop", goal: "Make the core loop — sign, bin, dodge — readable and frantic.", built: "Programmed the signing mechanic, trap papers and encounter logic in C#.", result: "A fast loop that stays fun under pressure through every encounter.", shot: 2, caption: "Signing papers." },
+      { area: "Bosses", title: "Nightmare coworkers", goal: "Give every coworker a distinct threat pattern.", built: "Designed and scripted each boss's behaviour and paper gimmicks.", result: "Four distinct encounters that escalate the chaos.", shot: 3, caption: "A boss encounter." },
+    ],
     shots: [{ p: "img", src: signedCover.url }, { p: "video", src: signedTrailer.url, poster: signedPoster.url }, { p: "img", src: signedSignature.url }, { p: "img", src: signedBoss.url }, { p: "img", src: signedDesk.url }],
   },
   {
@@ -111,6 +128,10 @@ export const PROJECTS: Project[] = [
     tools: "Unity, C#",
     link: "https://srijith-gopalakrishnan.itch.io/russ-fight-the-power",
     linkLabel: "View on itch.io",
+    did: [
+      { area: "Mechanics", title: "Core abilities", goal: "Nail the feel of the core abilities before the content builds out.", built: "Prototyped the player controller and ability set — the battery, magnet and movement cards shown on the reward screen.", result: "A playable loop the team builds levels around.", shot: 3, caption: "Reward cards." },
+      { area: "Enemies", title: "Drone encounters", goal: "Keep threats readable in a busy top-down scene.", built: "Built drone behaviour, telegraphs and hit reactions.", result: "Threats read clearly during combat.", shot: 1, caption: "Drone combat." },
+    ],
     shots: [{ p: "img", src: russKeyart.url, fit: "contain" }, { p: "img", src: russDrones.url }, { p: "img", src: russLab.url }, { p: "img", src: russLevelup.url }],
   },
   {
@@ -124,6 +145,10 @@ export const PROJECTS: Project[] = [
     tools: "Unreal Engine",
     link: "https://ninaddixit.itch.io/malloc",
     linkLabel: "Play on itch.io",
+    did: [
+      { area: "Prototype", title: "Game-jam build", goal: "Ship a playable prototype inside the jam deadline.", built: "Built the core loop — corridors, targets and triggers — in Unreal Engine over the jam weekend.", result: "A complete playable build in 48 hours.", shot: 0, caption: "In-game." },
+      { area: "Level editor", title: "Editor tooling", goal: "Let the team build rooms fast without code.", built: "Built a simple level-editor setup with cages, blocks and arrow triggers.", result: "Rooms could be iterated in minutes.", shot: 1, caption: "Corridor targets." },
+    ],
     shots: [{ p: "img", src: mallocGame.url }, { p: "img", src: mallocCorridor.url }, { p: "img", src: mallocRoom.url }],
   },
   {
@@ -134,6 +159,10 @@ export const PROJECTS: Project[] = [
     text: "A collection of game design documents, technical documentation and research papers developed throughout my studies.",
     link: "https://drive.google.com/drive/folders/1LkdhEufyAnk8N17kA8eFRrpcrcCi9b6j",
     linkLabel: "View documents",
+    did: [
+      { area: "Game design", title: "Design documents", goal: "Document design decisions so systems get built consistently.", built: "Wrote game design documents covering mechanics, level layouts and balance tables.", result: "A reusable library of design docs from my studies.", shot: 0, caption: "Design docs (placeholder)." },
+      { area: "Research", title: "Technical research", goal: "Understand the systems behind the games I build.", built: "Researched and documented engine, tooling and version-control workflows.", result: "Reference notes I use across projects.", shot: 1, caption: "Research notes (placeholder)." },
+    ],
     shots: [{ p: "gray", seed: 12, z: 2 }, { p: "gray", seed: 31, z: 1 }, { p: "gray", seed: 47, z: 0 }],
   },
 ];
