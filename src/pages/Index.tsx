@@ -4,8 +4,9 @@ import { PROJECTS, type Project } from "@/data/projects";
 
 const HERO_SHOT = { p: "dusk", seed: 7, sun: 0.7 } as const;
 
-/* Thumbnail columns: keep rows even (4 shots read better as 2x2 than 3+1). */
-const colsFor = (n: number) => (n === 4 ? 2 : Math.min(n, 3));
+/* Thumbnail columns: keep the rows as even as possible (4 shots read better as 2x2 than 3+1). */
+const COLS: Record<number, number> = { 1: 1, 2: 2, 3: 3, 4: 2, 5: 3, 6: 3, 7: 4, 8: 4 };
+const colsFor = (n: number) => COLS[n] ?? 3;
 
 const ProjectSection = ({ p }: { p: Project }) => {
   const [active, setActive] = useState(0);
@@ -22,8 +23,8 @@ const ProjectSection = ({ p }: { p: Project }) => {
   return (
     <article className="proj" id={p.id}>
       <div className="stage">
-        <SceneCanvas shot={p.shots[shown]} ariaLabel={`${p.title} screenshot ${shown + 1}`} style={{ opacity: fading ? 0 : 1 }} />
-        <div className="stage-in">
+        <SceneCanvas shot={p.shots[shown]} controls ariaLabel={p.shots[shown].p === "video" ? `${p.title} trailer` : `${p.title} screenshot ${shown + 1}`} style={{ opacity: fading ? 0 : 1 }} />
+        <div className={`stage-in${p.shots[shown].p === "video" ? " hide" : ""}`}>
           <div className="wrap">
             <div className="meta">
               {p.year && <span className="pill">{p.year}</span>}
@@ -46,7 +47,7 @@ const ProjectSection = ({ p }: { p: Project }) => {
         </div>
         <div className="shots" style={{ gridTemplateColumns: `repeat(${colsFor(p.shots.length)}, 1fr)` }}>
           {p.shots.map((s, i) => (
-            <button key={i} type="button" className="shot" aria-pressed={i === active} aria-label={`Show ${p.title} screenshot ${i + 1}`} onClick={() => select(i)}>
+            <button key={i} type="button" className={`shot${s.p === "video" ? " video" : ""}`} aria-pressed={i === active} aria-label={s.p === "video" ? `Show ${p.title} trailer` : `Show ${p.title} screenshot ${i + 1}`} onClick={() => select(i)}>
               <SceneCanvas shot={s} />
             </button>
           ))}
@@ -129,7 +130,7 @@ const Index = () => {
         </section>
 
         <section className="contact" id="contact">
-          <SceneCanvas shot={PROJECTS[1].shots[1]} />
+          <SceneCanvas shot={{ p: "ember", seed: 11, fx: 0.5 }} />
           <div className="wrap">
             <h2>Let’s build<br />something</h2>
             <p>Looking for a teammate, a collaborator or an intern? Send me a message and I’ll get back to you soon.</p>

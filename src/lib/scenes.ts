@@ -1,6 +1,7 @@
 /* Procedural key art + real screenshots. Ported from the original HTML design. */
 export type Shot =
   | { p: "img"; src: string }
+  | { p: "video"; src: string; poster: string }
   | { p: "dusk"; seed: number; sun: number }
   | { p: "ember"; seed: number; fx: number }
   | { p: "gray"; seed: number; z: number };
