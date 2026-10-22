@@ -5,9 +5,12 @@ import wtcCombat from "@/assets/wtc-combat.png.asset.json";
 import wtcGrove from "@/assets/wtc-grove.png.asset.json";
 import wtcLogo from "@/assets/wtc-logo.png.asset.json";
 import wtcSlashing from "@/assets/wtc-slashing.png.asset.json";
+import wtcPoster from "@/assets/wtc-trailer-poster.jpg.asset.json";
+import wtcTrailer from "@/assets/wtc-trailer.mp4.asset.json";
 
 /* ===== Projects: edit text here. Each "shots" entry is one screenshot slot. =====
    Scene presets: "dusk" (seed, sun 0-1), "ember" (seed, fx 0-1), "gray" (seed, z 0-2).
+   A trailer: { p: "video", src: <video url>, poster: <cover image url> } – it gets a play button in the row.
    role / team / tools / year are optional – leave them out to hide them. */
 export interface Project {
   id: string;
@@ -35,7 +38,7 @@ export const PROJECTS: Project[] = [
     tools: "Unity, C#",
     link: "https://play.google.com/store/apps/details?id=com.abhitechgames.whatthecreature.survivor.cartoony&pcampaignid=web_share",
     linkLabel: "Get it on Google Play",
-    shots: [{ p: "img", src: wtcLogo.url }, { p: "img", src: wtcCombat.url }, { p: "img", src: wtcGrove.url }, { p: "img", src: wtcBamboo.url }, { p: "img", src: wtcSlashing.url }, { p: "img", src: wtcCards.url }],
+    shots: [{ p: "img", src: wtcLogo.url }, { p: "video", src: wtcTrailer.url, poster: wtcPoster.url }, { p: "img", src: wtcCombat.url }, { p: "img", src: wtcGrove.url }, { p: "img", src: wtcBamboo.url }, { p: "img", src: wtcSlashing.url }, { p: "img", src: wtcCards.url }],
   },
   {
     id: "gully-gangs",
