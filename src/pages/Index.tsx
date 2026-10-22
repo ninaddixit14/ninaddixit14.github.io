@@ -130,7 +130,7 @@ const Index = () => {
         </section>
 
         <section className="contact" id="contact">
-          <SceneCanvas shot={PROJECTS[1].shots[1]} />
+          <SceneCanvas shot={{ p: "ember", seed: 11, fx: 0.5 }} />
           <div className="wrap">
             <h2>Let’s build<br />something</h2>
             <p>Looking for a teammate, a collaborator or an intern? Send me a message and I’ll get back to you soon.</p>
