@@ -7,6 +7,12 @@ import wtcLogo from "@/assets/wtc-logo.png.asset.json";
 import wtcSlashing from "@/assets/wtc-slashing.png.asset.json";
 import wtcPoster from "@/assets/wtc-trailer-poster.jpg.asset.json";
 import wtcTrailer from "@/assets/wtc-trailer.mp4.asset.json";
+import gullyCharacters from "@/assets/gully-characters.webp.asset.json";
+import gullyGrounds from "@/assets/gully-grounds.webp.asset.json";
+import gullyModes from "@/assets/gully-modes.webp.asset.json";
+import gullyPoster from "@/assets/gully-trailer-poster.jpg.asset.json";
+import gullyTrailer from "@/assets/gully-trailer.mp4.asset.json";
+
 
 /* ===== Projects: edit text here. Each "shots" entry is one screenshot slot. =====
    Scene presets: "dusk" (seed, sun 0-1), "ember" (seed, fx 0-1), "gray" (seed, z 0-2).
@@ -50,7 +56,7 @@ export const PROJECTS: Project[] = [
     tools: "Unity, C#, Multiplayer",
     link: "https://play.google.com/store/apps/details?id=com.BIG.ClanCricket&hl=en_IN",
     linkLabel: "Get it on Google Play",
-    shots: [{ p: "ember", seed: 11, fx: 0.72 }, { p: "ember", seed: 37, fx: 0.3 }, { p: "ember", seed: 64, fx: 0.55 }],
+    shots: [{ p: "img", src: gullyModes.url }, { p: "video", src: gullyTrailer.url, poster: gullyPoster.url }, { p: "img", src: gullyCharacters.url }, { p: "img", src: gullyGrounds.url }],
   },
   {
     id: "boogie-games",
