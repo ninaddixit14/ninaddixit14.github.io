@@ -23,6 +23,9 @@ const ProjectSection = ({ p }: { p: Project }) => {
   return (
     <article className="proj" id={p.id}>
       <div className="stage">
+        {p.shots[shown].p === "img" && p.shots[shown].fit === "contain" && (
+          <img className="stage-blur" src={p.shots[shown].src} alt="" aria-hidden="true" />
+        )}
         <SceneCanvas shot={p.shots[shown]} controls ariaLabel={p.shots[shown].p === "video" ? `${p.title} trailer` : `${p.title} screenshot ${shown + 1}`} style={{ opacity: fading ? 0 : 1 }} />
         <div className={`stage-in${p.shots[shown].p === "video" ? " hide" : ""}`}>
           <div className="wrap">
