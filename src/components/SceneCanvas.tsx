@@ -97,6 +97,14 @@ const SceneCanvas = ({ shot, animate = false, className, style, ariaLabel, contr
         alt={ariaLabel ?? ""}
         className={className}
         style={shot.fit ? { ...style, objectFit: shot.fit } : style}
+        loading="lazy"
+        aria-hidden={ariaLabel ? undefined : true}
+      />
+    );
+  }
+
+  return (
+    <canvas
       ref={ref}
       className={className}
       style={style}
