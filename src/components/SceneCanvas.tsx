@@ -61,6 +61,19 @@ const SceneCanvas = ({ shot, animate = false, className, style, ariaLabel }: Pro
     };
   }, [animate]);
 
+  if (shot.p === "img") {
+    return (
+      <img
+        src={shot.src}
+        alt={ariaLabel ?? ""}
+        className={className}
+        style={style}
+        loading="lazy"
+        aria-hidden={ariaLabel ? undefined : true}
+      />
+    );
+  }
+
   return (
     <canvas
       ref={ref}

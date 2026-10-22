@@ -1,5 +1,6 @@
-/* Procedural key art (stands in for screenshots). Ported from the original HTML design. */
+/* Procedural key art + real screenshots. Ported from the original HTML design. */
 export type Shot =
+  | { p: "img"; src: string }
   | { p: "dusk"; seed: number; sun: number }
   | { p: "ember"; seed: number; fx: number }
   | { p: "gray"; seed: number; z: number };
@@ -142,5 +143,5 @@ export function paintScene(cv: HTMLCanvasElement, shot: Shot, t = 0, px = 0) {
   c.setTransform(dpr, 0, 0, dpr, 0, 0);
   if (shot.p === "dusk") dusk(c, w, h, shot, t, px);
   else if (shot.p === "ember") ember(c, w, h, shot, t, px);
-  else gray(c, w, h, shot, t, px);
+  else if (shot.p === "gray") gray(c, w, h, shot, t, px);
 }
