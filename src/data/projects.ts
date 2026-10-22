@@ -26,6 +26,8 @@ import signedPoster from "@/assets/signed-trailer-poster.jpg.asset.json";
 import mallocGame from "@/assets/malloc-game.png.asset.json";
 import mallocCorridor from "@/assets/malloc-editor-corridor.png.asset.json";
 import mallocRoom from "@/assets/malloc-editor-room.png.asset.json";
+import boogieCatalog from "@/assets/boogie-catalog.png.asset.json";
+import boogiePromo from "@/assets/boogie-promo.webp.asset.json";
 
 
 /* ===== Projects: edit text here. Each "shots" entry is one screenshot slot. =====
@@ -82,7 +84,7 @@ export const PROJECTS: Project[] = [
     tools: "Unity, C#",
     link: "https://play.google.com/store/apps/details?id=com.FifthOceanStuido.GamesHubTest&pcampaignid=web_share",
     linkLabel: "Get it on Google Play",
-    shots: [{ p: "gray", seed: 3, z: 0 }, { p: "gray", seed: 19, z: 1 }, { p: "gray", seed: 42, z: 2 }],
+    shots: [{ p: "img", src: boogieCatalog.url }, { p: "img", src: boogiePromo.url, fit: "contain" }],
   },
   {
     id: "signed-away",
