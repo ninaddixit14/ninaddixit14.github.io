@@ -13,6 +13,10 @@ import gullyGrounds from "@/assets/gully-grounds.webp.asset.json";
 import gullyModes from "@/assets/gully-modes.webp.asset.json";
 import gullyPoster from "@/assets/gully-trailer-poster.jpg.asset.json";
 import gullyTrailer from "@/assets/gully-trailer.mp4.asset.json";
+import russKeyart from "@/assets/russ-keyart.png.asset.json";
+import russDrones from "@/assets/russ-drones.png.asset.json";
+import russLab from "@/assets/russ-lab.png.asset.json";
+import russLevelup from "@/assets/russ-levelup.png.asset.json";
 
 
 /* ===== Projects: edit text here. Each "shots" entry is one screenshot slot. =====
@@ -106,7 +110,7 @@ export const PROJECTS: Project[] = [
     tools: "Unity, C#",
     link: "https://srijith-gopalakrishnan.itch.io/russ-fight-the-power",
     linkLabel: "View on itch.io",
-    shots: [{ p: "gray", seed: 8, z: 1 }, { p: "gray", seed: 27, z: 0 }, { p: "gray", seed: 55, z: 2 }],
+    shots: [{ p: "img", src: russKeyart.url, fit: "contain" }, { p: "img", src: russDrones.url }, { p: "img", src: russLab.url }, { p: "img", src: russLevelup.url }],
   },
   {
     id: "documents",
