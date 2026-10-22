@@ -1,5 +1,6 @@
-/* Procedural key art (stands in for screenshots). Ported from the original HTML design. */
+/* Procedural key art + real screenshots. Ported from the original HTML design. */
 export type Shot =
+  | { p: "img"; src: string }
   | { p: "dusk"; seed: number; sun: number }
   | { p: "ember"; seed: number; fx: number }
   | { p: "gray"; seed: number; z: number };
