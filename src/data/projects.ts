@@ -57,7 +57,7 @@ export const PROJECTS: Project[] = [
     tools: "Unity, C#, Multiplayer",
     link: "https://play.google.com/store/apps/details?id=com.BIG.ClanCricket&hl=en_IN",
     linkLabel: "Get it on Google Play",
-    shots: [{ p: "img", src: gullyCover.url }, { p: "video", src: gullyTrailer.url, poster: gullyPoster.url }, { p: "img", src: gullyModes.url }, { p: "img", src: gullyCharacters.url }, { p: "img", src: gullyGrounds.url }],
+    shots: [{ p: "img", src: gullyCover.url, fit: "contain" }, { p: "video", src: gullyTrailer.url, poster: gullyPoster.url }, { p: "img", src: gullyModes.url }, { p: "img", src: gullyCharacters.url }, { p: "img", src: gullyGrounds.url }],
   },
   {
     id: "boogie-games",
