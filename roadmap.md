@@ -10,4 +10,5 @@
 - Boogie Games: games-catalog banner as the main picture, portrait app-store promo shown whole beside it.
 
 ## Open
+- Apply the new uploaded layout and playable opening scene while preserving existing portfolio content and media.
 - Confirm the real Role / Team / Tools / year details per project in `src/data/projects.ts`.
