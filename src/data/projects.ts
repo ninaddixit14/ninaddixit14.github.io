@@ -21,6 +21,8 @@ import signedCover from "@/assets/signed-cover.png.asset.json";
 import signedSignature from "@/assets/signed-signature.png.asset.json";
 import signedBoss from "@/assets/signed-boss.png.asset.json";
 import signedDesk from "@/assets/signed-desk.png.asset.json";
+import signedTrailer from "@/assets/signed-trailer.mp4.asset.json";
+import signedPoster from "@/assets/signed-trailer-poster.jpg.asset.json";
 
 
 /* ===== Projects: edit text here. Each "shots" entry is one screenshot slot. =====
@@ -89,7 +91,7 @@ export const PROJECTS: Project[] = [
     tools: "Unity, C#",
     link: "https://ninaddixit.itch.io/signedaway",
     linkLabel: "Play on itch.io",
-    shots: [{ p: "img", src: signedCover.url }, { p: "img", src: signedSignature.url }, { p: "img", src: signedBoss.url }, { p: "img", src: signedDesk.url }],
+    shots: [{ p: "img", src: signedCover.url }, { p: "video", src: signedTrailer.url, poster: signedPoster.url }, { p: "img", src: signedSignature.url }, { p: "img", src: signedBoss.url }, { p: "img", src: signedDesk.url }],
   },
   {
     id: "malloc",
