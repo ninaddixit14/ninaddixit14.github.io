@@ -69,7 +69,7 @@ body { margin: 0; background: var(--ink); color: var(--text); font-family: var(-
 .facts dt { color: var(--muted); font-size: .8rem; margin-bottom: .2rem; }
 .facts dd { margin: 0; }
 .proj-link { display: inline-block; }
-.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: .75rem; align-content: start; }
+.shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; align-content: start; }
 .shot { padding: 0; border: 2px solid transparent; border-radius: 10px; overflow: hidden; aspect-ratio: 16/10; background: var(--panel); cursor: pointer; transition: border-color .2s, opacity .2s; opacity: .6; }
 .shot:hover { opacity: 1; }
 .shot[aria-pressed="true"] { border-color: var(--accent); opacity: 1; }

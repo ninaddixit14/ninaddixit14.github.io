@@ -4,6 +4,9 @@ import { PROJECTS, type Project } from "@/data/projects";
 
 const HERO_SHOT = { p: "dusk", seed: 7, sun: 0.7 } as const;
 
+/* Thumbnail columns: keep rows even (4 shots read better as 2x2 than 3+1). */
+const colsFor = (n: number) => (n === 4 ? 2 : Math.min(n, 3));
+
 const ProjectSection = ({ p }: { p: Project }) => {
   const [active, setActive] = useState(0);
   const [shown, setShown] = useState(0);
@@ -41,7 +44,7 @@ const ProjectSection = ({ p }: { p: Project }) => {
           </dl>
           <a className="btn primary proj-link" href={p.link} target="_blank" rel="noopener noreferrer">{p.linkLabel}</a>
         </div>
-        <div className="shots">
+        <div className="shots" style={{ gridTemplateColumns: `repeat(${colsFor(p.shots.length)}, 1fr)` }}>
           {p.shots.map((s, i) => (
             <button key={i} type="button" className="shot" aria-pressed={i === active} aria-label={`Show ${p.title} screenshot ${i + 1}`} onClick={() => select(i)}>
               <SceneCanvas shot={s} />
