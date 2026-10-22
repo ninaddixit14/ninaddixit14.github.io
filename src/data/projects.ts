@@ -17,6 +17,10 @@ import russKeyart from "@/assets/russ-keyart.png.asset.json";
 import russDrones from "@/assets/russ-drones.png.asset.json";
 import russLab from "@/assets/russ-lab.png.asset.json";
 import russLevelup from "@/assets/russ-levelup.png.asset.json";
+import signedCover from "@/assets/signed-cover.png.asset.json";
+import signedSignature from "@/assets/signed-signature.png.asset.json";
+import signedBoss from "@/assets/signed-boss.png.asset.json";
+import signedDesk from "@/assets/signed-desk.png.asset.json";
 
 
 /* ===== Projects: edit text here. Each "shots" entry is one screenshot slot. =====
@@ -85,7 +89,7 @@ export const PROJECTS: Project[] = [
     tools: "Unity, C#",
     link: "https://ninaddixit.itch.io/signedaway",
     linkLabel: "Play on itch.io",
-    shots: [{ p: "dusk", seed: 88, sun: 0.4 }, { p: "dusk", seed: 14, sun: 0.75 }, { p: "dusk", seed: 99, sun: 0.2 }],
+    shots: [{ p: "img", src: signedCover.url }, { p: "img", src: signedSignature.url }, { p: "img", src: signedBoss.url }, { p: "img", src: signedDesk.url }],
   },
   {
     id: "malloc",
