@@ -12,7 +12,7 @@ interface Props {
   controls?: boolean;
 }
 
-const SceneCanvas = ({ shot, animate = false, className, style, ariaLabel }: Props) => {
+const SceneCanvas = ({ shot, animate = false, className, style, ariaLabel, controls = false }: Props) => {
   const ref = useRef<HTMLCanvasElement>(null);
   const shotRef = useRef(shot);
   shotRef.current = shot;
