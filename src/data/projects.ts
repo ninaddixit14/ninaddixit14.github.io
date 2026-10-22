@@ -21,6 +21,13 @@ import signedCover from "@/assets/signed-cover.png.asset.json";
 import signedSignature from "@/assets/signed-signature.png.asset.json";
 import signedBoss from "@/assets/signed-boss.png.asset.json";
 import signedDesk from "@/assets/signed-desk.png.asset.json";
+import signedTrailer from "@/assets/signed-trailer.mp4.asset.json";
+import signedPoster from "@/assets/signed-trailer-poster.jpg.asset.json";
+import mallocGame from "@/assets/malloc-game.png.asset.json";
+import mallocCorridor from "@/assets/malloc-editor-corridor.png.asset.json";
+import mallocRoom from "@/assets/malloc-editor-room.png.asset.json";
+import boogieCatalog from "@/assets/boogie-catalog.png.asset.json";
+import boogiePromo from "@/assets/boogie-promo.webp.asset.json";
 
 
 /* ===== Projects: edit text here. Each "shots" entry is one screenshot slot. =====
@@ -77,7 +84,7 @@ export const PROJECTS: Project[] = [
     tools: "Unity, C#",
     link: "https://play.google.com/store/apps/details?id=com.FifthOceanStuido.GamesHubTest&pcampaignid=web_share",
     linkLabel: "Get it on Google Play",
-    shots: [{ p: "gray", seed: 3, z: 0 }, { p: "gray", seed: 19, z: 1 }, { p: "gray", seed: 42, z: 2 }],
+    shots: [{ p: "img", src: boogieCatalog.url }, { p: "img", src: boogiePromo.url, fit: "contain" }],
   },
   {
     id: "signed-away",
@@ -89,7 +96,7 @@ export const PROJECTS: Project[] = [
     tools: "Unity, C#",
     link: "https://ninaddixit.itch.io/signedaway",
     linkLabel: "Play on itch.io",
-    shots: [{ p: "img", src: signedCover.url }, { p: "img", src: signedSignature.url }, { p: "img", src: signedBoss.url }, { p: "img", src: signedDesk.url }],
+    shots: [{ p: "img", src: signedCover.url }, { p: "video", src: signedTrailer.url, poster: signedPoster.url }, { p: "img", src: signedSignature.url }, { p: "img", src: signedBoss.url }, { p: "img", src: signedDesk.url }],
   },
   {
     id: "malloc",
@@ -102,7 +109,7 @@ export const PROJECTS: Project[] = [
     tools: "Unreal Engine",
     link: "https://ninaddixit.itch.io/malloc",
     linkLabel: "Play on itch.io",
-    shots: [{ p: "ember", seed: 5, fx: 0.4 }, { p: "ember", seed: 29, fx: 0.65 }, { p: "ember", seed: 73, fx: 0.25 }],
+    shots: [{ p: "img", src: mallocGame.url }, { p: "img", src: mallocCorridor.url }, { p: "img", src: mallocRoom.url }],
   },
   {
     id: "russ",
