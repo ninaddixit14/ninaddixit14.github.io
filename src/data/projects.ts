@@ -44,6 +44,9 @@ export interface Project {
   role?: string;
   team?: string;
   tools?: string;
+  duration?: string;
+  /** Add your confirmed contributions here to show the new layout's What I did section. */
+  did?: { area: string; title: string; goal: string; built: string; result: string; shot: number; caption: string }[];
   link: string;
   linkLabel: string;
   shots: Shot[];
