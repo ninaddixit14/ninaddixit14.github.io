@@ -6,5 +6,6 @@
 - WTC: use real WTC pictures; logo is the main image, campfire teaser removed.
 
 ## Open
-- Collect and place real screenshots for the remaining projects: Gully Gangs, Boogie Games, Signed Away, Malloc, Russ. (Waiting on the user to upload them.)
+- Gully Gangs: add the user's three pictures and the Open Beta trailer (in progress).
+- Collect and place real screenshots for the remaining projects: Boogie Games, Signed Away, Malloc, Russ. (Waiting on the user to upload them.)
 - Confirm the real Role / Team / Tools / year details per project in `src/data/projects.ts`.
