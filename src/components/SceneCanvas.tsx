@@ -8,6 +8,8 @@ interface Props {
   className?: string;
   style?: CSSProperties;
   ariaLabel?: string;
+  /** Show playback controls (used only for the large view; thumbnails stay a still). */
+  controls?: boolean;
 }
 
 const SceneCanvas = ({ shot, animate = false, className, style, ariaLabel }: Props) => {
@@ -60,6 +62,33 @@ const SceneCanvas = ({ shot, animate = false, className, style, ariaLabel }: Pro
       host.removeEventListener("pointermove", onMove);
     };
   }, [animate]);
+
+  if (shot.p === "video") {
+    if (!controls) {
+      return (
+        <img
+          src={shot.poster}
+          alt={ariaLabel ?? ""}
+          className={className}
+          style={style}
+          loading="lazy"
+          aria-hidden={ariaLabel ? undefined : true}
+        />
+      );
+    }
+    return (
+      <video
+        src={shot.src}
+        poster={shot.poster}
+        controls
+        playsInline
+        preload="none"
+        className={className}
+        style={style}
+        aria-label={ariaLabel}
+      />
+    );
+  }
 
   if (shot.p === "img") {
     return (
