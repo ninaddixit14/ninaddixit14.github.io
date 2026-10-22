@@ -90,8 +90,8 @@ body { margin: 0; background: var(--ink); color: var(--text); font-family: var(-
 .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; align-content: start; }
 .pf .shot { position: relative; display: block; width: 100%; height: auto; padding: 0; border: 2px solid transparent; border-radius: 10px; overflow: hidden; aspect-ratio: 16/10; background: var(--panel); cursor: pointer; transition: border-color .2s, opacity .2s; opacity: .6; }
 .shot.video::after { content: ""; position: absolute; left: 50%; top: 50%; width: 0; height: 0; margin: -9px 0 0 -5px; border-left: 15px solid var(--accent); border-top: 9px solid transparent; border-bottom: 9px solid transparent; filter: drop-shadow(0 1px 3px rgba(0,0,0,.9)); }
-.shot:hover { opacity: 1; }
-.shot[aria-pressed="true"] { border-color: var(--accent); opacity: 1; }
+.pf .shot:hover { opacity: 1; }
+.pf .shot[aria-pressed="true"] { border-color: var(--accent); opacity: 1; }
 .pf .shots-note { grid-column: 1 / -1; margin: .25rem 0 0; font-size: .82rem; color: var(--muted); }
 
 .did { margin-top: 4.5rem; }
