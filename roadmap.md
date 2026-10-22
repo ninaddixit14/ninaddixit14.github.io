@@ -7,5 +7,6 @@
 - Gully Gangs: supplied cover artwork shown whole as the main picture, Open Beta trailer with a play button, plus modes, characters and grounds pictures.
 
 ## Open
-- Collect and place real screenshots for the remaining projects: Boogie Games, Signed Away, Malloc, Russ. (Waiting on the user to upload them.)
+- Collect and place real screenshots for the remaining projects: Boogie Games, Signed Away, Malloc. (Waiting on the user to upload them.)
+- Russ: real key art (left edge trimmed to drop a video-player icon) plus drones, lab and level-up pictures in a 2x2 row.
 - Confirm the real Role / Team / Tools / year details per project in `src/data/projects.ts`.
