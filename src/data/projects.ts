@@ -23,6 +23,9 @@ import signedBoss from "@/assets/signed-boss.png.asset.json";
 import signedDesk from "@/assets/signed-desk.png.asset.json";
 import signedTrailer from "@/assets/signed-trailer.mp4.asset.json";
 import signedPoster from "@/assets/signed-trailer-poster.jpg.asset.json";
+import mallocGame from "@/assets/malloc-game.png.asset.json";
+import mallocCorridor from "@/assets/malloc-editor-corridor.png.asset.json";
+import mallocRoom from "@/assets/malloc-editor-room.png.asset.json";
 
 
 /* ===== Projects: edit text here. Each "shots" entry is one screenshot slot. =====
@@ -104,7 +107,7 @@ export const PROJECTS: Project[] = [
     tools: "Unreal Engine",
     link: "https://ninaddixit.itch.io/malloc",
     linkLabel: "Play on itch.io",
-    shots: [{ p: "ember", seed: 5, fx: 0.4 }, { p: "ember", seed: 29, fx: 0.65 }, { p: "ember", seed: 73, fx: 0.25 }],
+    shots: [{ p: "img", src: mallocGame.url }, { p: "img", src: mallocCorridor.url }, { p: "img", src: mallocRoom.url }],
   },
   {
     id: "russ",
