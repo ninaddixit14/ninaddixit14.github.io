@@ -1,4 +1,8 @@
 import type { Shot } from "@/lib/scenes";
+import wtcCombat from "@/assets/wtc-combat.png.asset.json";
+import wtcGrove from "@/assets/wtc-grove.png.asset.json";
+import wtcCampfire from "@/assets/wtc-campfire.jpg.asset.json";
+import wtcLogo from "@/assets/wtc-logo.png.asset.json";
 
 /* ===== Projects: edit text here. Each "shots" entry is one screenshot slot. =====
    Scene presets: "dusk" (seed, sun 0-1), "ember" (seed, fx 0-1), "gray" (seed, z 0-2).
@@ -29,7 +33,7 @@ export const PROJECTS: Project[] = [
     tools: "Unity, C#",
     link: "https://play.google.com/store/apps/details?id=com.abhitechgames.whatthecreature.survivor.cartoony&pcampaignid=web_share",
     linkLabel: "Get it on Google Play",
-    shots: [{ p: "dusk", seed: 7, sun: 0.66 }, { p: "dusk", seed: 23, sun: 0.28 }, { p: "dusk", seed: 51, sun: 0.85 }],
+    shots: [{ p: "img", src: wtcCombat.url }, { p: "img", src: wtcGrove.url }, { p: "img", src: wtcCampfire.url }, { p: "img", src: wtcLogo.url }],
   },
   {
     id: "gully-gangs",
