@@ -1,5 +1,5 @@
 import { test, expect } from "bun:test";
-import { PROJECTS } from "./projects";
+import { PROJECTS, AWARDS } from "./projects";
 
 test("preserves the portfolio project order without the Documents section", () => {
   expect(PROJECTS.map(project => project.id)).toEqual(["wtc", "gully-gangs", "boogie-games", "signed-away", "russ", "malloc"]);
@@ -19,4 +19,11 @@ test("preserves whole-cover presentation", () => {
   expect(PROJECTS.find(project => project.id === "gully-gangs")?.shots[0]).toMatchObject({ p: "img", fit: "contain" });
   expect(PROJECTS.find(project => project.id === "russ")?.shots[0]).toMatchObject({ p: "img", fit: "contain" });
   expect(PROJECTS.find(project => project.id === "boogie-games")?.shots[1]).toMatchObject({ p: "img", fit: "contain" });
+});
+
+test("keeps the two award results the user stated for What The Creature!", () => {
+  expect(AWARDS).toEqual([
+    { ceremony: "Gem Awards", category: "Best Student Game", result: "Winner", game: "What The Creature!", won: true },
+    { ceremony: "FICCI BAF Awards", category: "", result: "Runner-up", game: "What The Creature!", won: false },
+  ]);
 });

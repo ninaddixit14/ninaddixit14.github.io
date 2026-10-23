@@ -152,3 +152,17 @@ export const PROJECTS: Project[] = [
     shots: [{ p: "img", src: mallocGame.url }, { p: "img", src: mallocCorridor.url }, { p: "img", src: mallocRoom.url }],
   },
 ];
+
+/* Awards the user stated. Keep the exact wording of the ceremony, category and result. */
+export interface Award {
+  ceremony: string;
+  category: string;
+  result: string;
+  game: string;
+  won: boolean;
+}
+
+export const AWARDS: Award[] = [
+  { ceremony: "Gem Awards", category: "Best Student Game", result: "Winner", game: "What The Creature!", won: true },
+  { ceremony: "FICCI BAF Awards", category: "", result: "Runner-up", game: "What The Creature!", won: false },
+];
