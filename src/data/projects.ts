@@ -153,16 +153,16 @@ export const PROJECTS: Project[] = [
   },
 ];
 
-/* Awards the user stated. Keep the exact wording of the ceremony and the result. */
+/* Awards the user stated. Keep the exact wording of the ceremony, category and result. */
 export interface Award {
-  title: string;
-  body: string;
+  ceremony: string;
+  category: string;
   result: string;
   game: string;
   won: boolean;
 }
 
 export const AWARDS: Award[] = [
-  { title: "Best Student Game", body: "Gem Awards", result: "Winner", game: "What The Creature!", won: true },
-  { title: "Best Game", body: "FICCI BAF Awards", result: "Runner-up", game: "What The Creature!", won: false },
+  { ceremony: "Gem Awards", category: "Best Student Game", result: "Winner", game: "What The Creature!", won: true },
+  { ceremony: "FICCI BAF Awards", category: "", result: "Runner-up", game: "What The Creature!", won: false },
 ];
