@@ -11,6 +11,7 @@
 - Boogie Games: games-catalog banner as the main picture, portrait app-store promo shown whole beside it.
 - What I did: mock contribution breakdowns (goal / built / result per project) added for all projects; replace with real details when the user supplies them.
 - Documents section removed from the portfolio (data file, tests, page); GitHub contact link removed from the contact row.
+- Achievements section added with the two award results the user stated for WTC: Gem Awards Best Student Game (winner) and FICCI BAF Awards runner-up.
 
 ## Open
 - Replace the mock What I did entries in `src/data/projects.ts` with the user's real goals, work, and results per project.
