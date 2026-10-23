@@ -154,7 +154,6 @@ const Index = () => {
                 <div className="row"><dt>Engines</dt><dd><span className="chip">Unity</span><span className="chip">Unreal Engine</span></dd></div>
                 <div className="row"><dt>Languages</dt><dd><span className="chip">C#</span><span className="chip">C++</span></dd></div>
                 <div className="row"><dt>Craft</dt><dd><span className="chip">Level design</span><span className="chip">Game mechanics</span><span className="chip">Game engine UI/UX</span></dd></div>
-                <div className="row"><dt>Tools</dt><dd><span className="chip">Git</span><span className="chip">Diversion</span><span className="chip">Visual Studio</span><span className="chip">Photoshop</span></dd></div>
               </dl>
             </div>
           </div>
