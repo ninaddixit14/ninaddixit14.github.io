@@ -151,18 +151,4 @@ export const PROJECTS: Project[] = [
     ],
     shots: [{ p: "img", src: mallocGame.url }, { p: "img", src: mallocCorridor.url }, { p: "img", src: mallocRoom.url }],
   },
-  {
-    id: "documents",
-    title: "Documents",
-    engine: "Game design",
-    tagline: "Design documents, technical docs and research.",
-    text: "A collection of game design documents, technical documentation and research papers developed throughout my studies.",
-    link: "https://drive.google.com/drive/folders/1LkdhEufyAnk8N17kA8eFRrpcrcCi9b6j",
-    linkLabel: "View documents",
-    did: [
-      { area: "Game design", title: "Design documents", goal: "Document design decisions so systems get built consistently.", built: "Wrote game design documents covering mechanics, level layouts and balance tables.", result: "A reusable library of design docs from my studies.", shot: 0, caption: "Design docs (placeholder)." },
-      { area: "Research", title: "Technical research", goal: "Understand the systems behind the games I build.", built: "Researched and documented engine, tooling and version-control workflows.", result: "Reference notes I use across projects.", shot: 1, caption: "Research notes (placeholder)." },
-    ],
-    shots: [{ p: "gray", seed: 12, z: 2 }, { p: "gray", seed: 31, z: 1 }, { p: "gray", seed: 47, z: 0 }],
-  },
 ];
