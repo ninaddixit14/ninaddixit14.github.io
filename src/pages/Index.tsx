@@ -147,7 +147,6 @@ const Index = () => {
             <div className="links">
               <a className="btn primary" href="mailto:ninaddixit14@gmail.com">Email me</a>
               <a className="btn" href="tel:+916362860544">+91 6362860544</a>
-              <a className="btn" href="https://github.com/ninaddixit14" target="_blank" rel="noopener noreferrer">GitHub</a>
               <a className="btn" href="https://www.linkedin.com/in/ninaddixit14/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               <a className="btn" href="https://drive.google.com/file/d/1H0AuOV5-Cp8l4yrSkn9qcQUQ68V7h5mH/view?usp=drive_link" target="_blank" rel="noopener noreferrer">View My Resume</a>
             </div>
