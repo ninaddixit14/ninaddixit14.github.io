@@ -1,5 +1,5 @@
 import { test, expect } from "bun:test";
-import { PROJECTS } from "./projects";
+import { PROJECTS, AWARDS } from "./projects";
 
 test("preserves the portfolio project order without the Documents section", () => {
   expect(PROJECTS.map(project => project.id)).toEqual(["wtc", "gully-gangs", "boogie-games", "signed-away", "russ", "malloc"]);
