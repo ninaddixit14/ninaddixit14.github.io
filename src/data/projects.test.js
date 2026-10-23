@@ -28,3 +28,9 @@ test("keeps the two award results the user stated for What The Creature!", () =>
     { ceremony: "FICCI BAF Awards", category: "", result: "Runner-up", game: "What The Creature!", won: false },
   ]);
 });
+
+test("opening scene plays itself and takes no input", () => {
+  expect(HERO_SHOT).toEqual({ p: "attract", seed: 9 });
+  expect(existsSync("src/lib/hero-platformer.js")).toBe(false);
+  expect(existsSync("src/components/HeroPlatformer.tsx")).toBe(false);
+});
