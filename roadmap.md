@@ -9,7 +9,8 @@
 - Signed Away: title-screen cover as the main picture, gameplay clip with a play button, plus signature, boss-dialogue and paperwork pictures.
 - Russ: real key art (left edge trimmed to drop a video-player icon) plus drones, lab and level-up pictures in a 2x2 row.
 - Boogie Games: games-catalog banner as the main picture, portrait app-store promo shown whole beside it.
-- What I did: mock contribution breakdowns (goal / built / result per project) added for all seven projects; replace with real details when the user supplies them.
+- What I did: mock contribution breakdowns (goal / built / result per project) added for all projects; replace with real details when the user supplies them.
+- Documents section removed from the portfolio (data file, tests, page).
 
 ## Open
 - Replace the mock What I did entries in `src/data/projects.ts` with the user's real goals, work, and results per project.
