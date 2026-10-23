@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import SceneCanvas from "@/components/SceneCanvas";
-import HeroPlatformer from "@/components/HeroPlatformer";
 import { Button } from "@/components/ui/button";
-import { PROJECTS, AWARDS, type Project } from "@/data/projects";
+import { PROJECTS, AWARDS, HERO_SHOT, type Project } from "@/data/projects";
 
 /* Thumbnail columns: keep the rows as even as possible (4 shots read better as 2x2 than 3+1). */
 const COLS: Record<number, number> = { 1: 1, 2: 2, 3: 3, 4: 2, 5: 3, 6: 3, 7: 4, 8: 4 };
@@ -99,7 +98,7 @@ const Index = () => {
 
       <main id="top">
         <section className="hero" id="hero">
-          <HeroPlatformer />
+          <SceneCanvas shot={HERO_SHOT} animate className="hero-canvas" ariaLabel="Dusk landscape: a traveller crosses floating rocks and lantern lights on its own." />
           <div className="hero-in">
             <div className="wrap">
               <div>
@@ -109,6 +108,7 @@ const Index = () => {
               </div>
             </div>
           </div>
+          <p className="hero-cue" aria-hidden="true"><span>Scroll</span><i></i></p>
         </section>
 
         <section className="index" id="work" aria-label="All projects">

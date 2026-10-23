@@ -4,7 +4,8 @@ export type Shot =
   | { p: "video"; src: string; poster: string }
   | { p: "dusk"; seed: number; sun: number }
   | { p: "ember"; seed: number; fx: number }
-  | { p: "gray"; seed: number; z: number };
+  | { p: "gray"; seed: number; z: number }
+  | { p: "attract"; seed: number };
 
 type C = CanvasRenderingContext2D;
 
@@ -18,15 +19,25 @@ function rng(s: number) {
 }
 const TAU = Math.PI * 2;
 
+type RidgeParams = { p1: number; p2: number; p3: number; f1: number; f2: number; f3: number };
+
+function ridgeParams(r: () => number): RidgeParams {
+  return { p1: r() * TAU, p2: r() * TAU, p3: r() * TAU, f1: 1 + r() * 2, f2: 3 + r() * 4, f3: 9 + r() * 8 };
+}
+/** Height of a ridge layer at screen x, so figures can be drawn standing on it. */
+function ridgeY(x: number, w: number, h: number, base: number, amp: number, P: RidgeParams, shift: number) {
+  const u = (x + shift) / w;
+  const n = 0.55 * Math.sin(u * P.f1 * TAU + P.p1) + 0.3 * Math.sin(u * P.f2 * TAU + P.p2) + 0.15 * Math.sin(u * P.f3 * TAU + P.p3);
+  return h * base - (h * amp * (n + 1)) / 2;
+}
+const wrap = (v: number, m: number) => ((v % m) + m) % m;
+
 function ridge(c: C, w: number, h: number, base: number, amp: number, col: string, r: () => number, shift: number) {
-  const p1 = r() * TAU, p2 = r() * TAU, p3 = r() * TAU, f1 = 1 + r() * 2, f2 = 3 + r() * 4, f3 = 9 + r() * 8;
+  const P = ridgeParams(r);
   c.beginPath(); c.moveTo(0, h);
-  for (let x = 0; x <= w + 8; x += 6) {
-    const u = (x + shift) / w;
-    const n = 0.55 * Math.sin(u * f1 * TAU + p1) + 0.3 * Math.sin(u * f2 * TAU + p2) + 0.15 * Math.sin(u * f3 * TAU + p3);
-    c.lineTo(x, h * base - (h * amp * (n + 1)) / 2);
-  }
+  for (let x = 0; x <= w + 8; x += 6) c.lineTo(x, ridgeY(x, w, h, base, amp, P, shift));
   c.lineTo(w, h); c.closePath(); c.fillStyle = col; c.fill();
+  return P;
 }
 function vignette(c: C, w: number, h: number, k: number) {
   const g = c.createRadialGradient(w / 2, h / 2, Math.min(w, h) * 0.3, w / 2, h / 2, Math.max(w, h) * 0.75);
@@ -135,6 +146,113 @@ function gray(c: C, w: number, h: number, s: Extract<Shot, { p: "gray" }>, _t: n
   vignette(c, w, h, 0.6);
 }
 
+/* Attract mode: the dusk world plays itself. A traveller crosses the ridges on
+   its own and the lanterns it passes flare up – no keyboard, no touch, no input. */
+function traveller(c: C, x: number, y: number, ht: number, t: number) {
+  const ph = t * 6;
+  c.save();
+  c.fillStyle = "rgba(0,0,0,.35)";
+  c.beginPath(); c.ellipse(x, y, ht * 0.17, ht * 0.045, 0, 0, TAU); c.fill();
+  c.translate(x, y); c.scale(ht, ht);
+  c.translate(0, -Math.abs(Math.sin(ph)) * 0.035);
+  c.lineCap = "round"; c.lineJoin = "round";
+  c.strokeStyle = "#04030a"; c.lineWidth = 0.11;
+  c.beginPath(); c.moveTo(0, -0.44); c.lineTo(Math.sin(ph) * 0.2, -0.01); c.stroke();
+  c.beginPath(); c.moveTo(0, -0.44); c.lineTo(Math.sin(ph + Math.PI) * 0.2, -0.01); c.stroke();
+  c.fillStyle = "#04030a";
+  c.beginPath(); c.moveTo(-0.11, -0.44); c.lineTo(0.11, -0.44); c.lineTo(0.08, -0.8); c.lineTo(-0.08, -0.8); c.closePath(); c.fill();
+  c.fillRect(-0.19, -0.76, 0.09, 0.26);
+  c.beginPath(); c.arc(0.01, -0.9, 0.1, 0, TAU); c.fill();
+  c.lineWidth = 0.075;
+  c.beginPath(); c.moveTo(0.01, -0.74); c.lineTo(Math.sin(ph + Math.PI) * 0.16 + 0.05, -0.5); c.stroke();
+  c.save(); c.shadowColor = "#5ef2ff"; c.shadowBlur = 10; c.strokeStyle = "#5ef2ff"; c.lineWidth = 0.055;
+  c.beginPath(); c.moveTo(-0.02, -0.84);
+  for (let k = 1; k <= 6; k++) {
+    const u = k / 6;
+    c.lineTo(-0.06 - u * 0.5, -0.84 + Math.sin(ph * 1.2 - u * 3.4) * 0.06 + u * 0.12);
+  }
+  c.stroke(); c.restore();
+  c.restore();
+}
+
+function attract(c: C, w: number, h: number, s: Extract<Shot, { p: "attract" }>, t: number, px: number) {
+  const r = rng(s.seed);
+  const g = c.createLinearGradient(0, 0, 0, h);
+  g.addColorStop(0, "#04050d"); g.addColorStop(0.34, "#12122f"); g.addColorStop(0.6, "#38215a");
+  g.addColorStop(0.78, "#7b3c5c"); g.addColorStop(0.88, "#c4685a"); g.addColorStop(1, "#170d20");
+  c.fillStyle = g; c.fillRect(0, 0, w, h);
+
+  for (let i = 0; i < 150; i++) {
+    const sx = r() * w, sy = r() * h * 0.52, tw = 0.4 + 0.6 * Math.abs(Math.sin(t * (0.3 + r() * 0.6) + i));
+    c.fillStyle = "rgba(255,255,255," + ((1 - sy / (h * 0.52)) * 0.75 * tw).toFixed(3) + ")";
+    c.fillRect(sx - px * 5, sy, 1.5, 1.5);
+  }
+
+  const mx = w * 0.8 - px * 10, my = h * 0.16;
+  const mg = c.createRadialGradient(mx, my, 0, mx, my, h * 0.26);
+  mg.addColorStop(0, "rgba(190,215,255,.3)"); mg.addColorStop(1, "rgba(190,215,255,0)");
+  c.fillStyle = mg; c.fillRect(0, 0, w, h);
+  c.fillStyle = "#e6eeff"; c.beginPath(); c.arc(mx, my, h * 0.032, 0, TAU); c.fill();
+  c.fillStyle = "rgba(120,145,190,.4)"; c.beginPath(); c.arc(mx - h * 0.011, my + h * 0.009, h * 0.009, 0, TAU); c.fill();
+
+  const gx = w * 0.3 - px * 7, gy = h * 0.84;
+  const sg = c.createRadialGradient(gx, gy, 0, gx, gy, h * 0.5);
+  sg.addColorStop(0, "rgba(255,150,90,.55)"); sg.addColorStop(0.4, "rgba(255,110,80,.16)"); sg.addColorStop(1, "rgba(255,110,80,0)");
+  c.fillStyle = sg; c.fillRect(0, 0, w, h);
+
+  for (let i = 0; i < 6; i++) {
+    const by = h * (0.26 + r() * 0.32), bw = w * (0.16 + r() * 0.26), sp = 3 + r() * 7;
+    const bx = wrap(t * sp + r() * (w + bw), w + bw * 2) - bw;
+    const bg = c.createLinearGradient(bx, 0, bx + bw, 0);
+    bg.addColorStop(0, "rgba(255,190,200,0)");
+    bg.addColorStop(0.5, "rgba(255,190,200," + (0.05 + r() * 0.07).toFixed(3) + ")");
+    bg.addColorStop(1, "rgba(255,190,200,0)");
+    c.fillStyle = bg; c.fillRect(bx, by, bw, h * (0.005 + r() * 0.011));
+  }
+
+  const L: [number, number, string][] = [[0.6, 0.15, "#4a2a66"], [0.68, 0.16, "#311b4e"], [0.77, 0.13, "#1d1034"]];
+  for (let i = 0; i < L.length; i++) ridge(c, w, h, L[i][0], L[i][1], L[i][2], r, px * (i + 1) * 12 + t * (i + 1) * 2);
+
+  for (let i = 0; i < 4; i++) {
+    const iw = w * (0.045 + r() * 0.05);
+    const ix = wrap(r() * (w + iw * 2) - t * 6, w + iw * 2) - iw;
+    const iy = h * (0.44 + r() * 0.18) + Math.sin(t * 0.7 + i * 1.9) * h * 0.01;
+    c.fillStyle = "#0c0620";
+    c.beginPath(); c.moveTo(ix - iw * 0.5, iy); c.lineTo(ix + iw * 0.5, iy);
+    c.lineTo(ix + iw * 0.18, iy + iw * 0.62); c.lineTo(ix - iw * 0.22, iy + iw * 0.4);
+    c.closePath(); c.fill();
+    c.fillStyle = "#241540"; c.fillRect(ix - iw * 0.5, iy - iw * 0.09, iw, iw * 0.09);
+    c.save(); c.shadowColor = "#5ef2ff"; c.shadowBlur = 14; c.fillStyle = "#5ef2ff";
+    c.beginPath(); c.moveTo(ix + iw * 0.06, iy - iw * 0.5); c.lineTo(ix + iw * 0.2, iy - iw * 0.1); c.lineTo(ix - iw * 0.08, iy - iw * 0.1); c.closePath(); c.fill();
+    c.restore();
+  }
+
+  const fgBase = 0.93, fgAmp = 0.09, fgShift = px * 46 + t * 22;
+  const FG = ridge(c, w, h, fgBase, fgAmp, "#060311", r, fgShift);
+  const wx = wrap(t * 44, w + 240) - 120;
+
+  for (let i = 0; i < 6; i++) {
+    const lx = wrap(w * (0.06 + i * 0.16) - t * 22, w + 120) - 60;
+    const ly = ridgeY(lx, w, h, fgBase, fgAmp, FG, fgShift) - h * (0.05 + (i % 3) * 0.018) + Math.sin(t * 1.1 + i * 2) * h * 0.006;
+    const near = Math.max(0, 1 - Math.abs(lx - wx) / (w * 0.07));
+    const glow = Math.min(1, 0.4 + 0.3 * Math.sin(t * 2.2 + i) + near * 0.6);
+    c.save(); c.shadowColor = "#ffd59e"; c.shadowBlur = 16 + near * 14;
+    c.fillStyle = "rgba(255,213,158," + glow.toFixed(3) + ")";
+    c.beginPath(); c.arc(lx, ly, h * 0.008, 0, TAU); c.fill();
+    c.restore();
+  }
+
+  traveller(c, wx, ridgeY(wx, w, h, fgBase, fgAmp, FG, fgShift), h * 0.085, t);
+
+  for (let i = 0; i < 54; i++) {
+    const ex = r() * w, sp = 9 + r() * 24, ph = r() * h * 0.7;
+    const y = h - ((ph + t * sp) % (h * 0.7));
+    c.fillStyle = "rgba(94,242,255," + (0.14 + 0.42 * (y / h)).toFixed(3) + ")";
+    c.fillRect(ex + Math.sin(t * 0.7 + i) * 10 - px * 18, y, 2, 2);
+  }
+  vignette(c, w, h, 0.62);
+}
+
 export function paintScene(cv: HTMLCanvasElement, shot: Shot, t = 0, px = 0) {
   const dpr = Math.min(window.devicePixelRatio || 1, 1.5), w = cv.clientWidth, h = cv.clientHeight;
   if (!w || !h) return;
@@ -145,4 +263,5 @@ export function paintScene(cv: HTMLCanvasElement, shot: Shot, t = 0, px = 0) {
   if (shot.p === "dusk") dusk(c, w, h, shot, t, px);
   else if (shot.p === "ember") ember(c, w, h, shot, t, px);
   else if (shot.p === "gray") gray(c, w, h, shot, t, px);
+  else if (shot.p === "attract") attract(c, w, h, shot, t, px);
 }

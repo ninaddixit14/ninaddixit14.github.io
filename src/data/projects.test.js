@@ -1,5 +1,6 @@
 import { test, expect } from "bun:test";
-import { PROJECTS, AWARDS } from "./projects";
+import { existsSync } from "node:fs";
+import { PROJECTS, AWARDS, HERO_SHOT } from "./projects";
 
 test("preserves the portfolio project order without the Documents section", () => {
   expect(PROJECTS.map(project => project.id)).toEqual(["wtc", "gully-gangs", "boogie-games", "signed-away", "russ", "malloc"]);
@@ -26,4 +27,10 @@ test("keeps the two award results the user stated for What The Creature!", () =>
     { ceremony: "Gem Awards", category: "Best Student Game", result: "Winner", game: "What The Creature!", won: true },
     { ceremony: "FICCI BAF Awards", category: "", result: "Runner-up", game: "What The Creature!", won: false },
   ]);
+});
+
+test("opening scene plays itself and takes no input", () => {
+  expect(HERO_SHOT).toEqual({ p: "attract", seed: 9 });
+  expect(existsSync("src/lib/hero-platformer.js")).toBe(false);
+  expect(existsSync("src/components/HeroPlatformer.tsx")).toBe(false);
 });
