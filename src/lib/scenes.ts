@@ -263,4 +263,5 @@ export function paintScene(cv: HTMLCanvasElement, shot: Shot, t = 0, px = 0) {
   if (shot.p === "dusk") dusk(c, w, h, shot, t, px);
   else if (shot.p === "ember") ember(c, w, h, shot, t, px);
   else if (shot.p === "gray") gray(c, w, h, shot, t, px);
+  else if (shot.p === "attract") attract(c, w, h, shot, t, px);
 }

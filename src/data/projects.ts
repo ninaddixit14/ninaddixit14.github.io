@@ -29,9 +29,14 @@ import mallocRoom from "@/assets/malloc-editor-room.png.asset.json";
 import boogieCatalog from "@/assets/boogie-catalog.png.asset.json";
 import boogiePromo from "@/assets/boogie-promo.webp.asset.json";
 
+/* ===== Opening scene: the dusk world plays itself. Change the seed for a different world. ===== */
+export const HERO_SHOT: Shot = { p: "attract", seed: 9 };
+
+
+
 
 /* ===== Projects: edit text here. Each "shots" entry is one screenshot slot. =====
-   Scene presets: "dusk" (seed, sun 0-1), "ember" (seed, fx 0-1), "gray" (seed, z 0-2).
+   Scene presets: "attract" (seed), "dusk" (seed, sun 0-1), "ember" (seed, fx 0-1), "gray" (seed, z 0-2).
    A trailer: { p: "video", src: <video url>, poster: <cover image url> } – it gets a play button in the row.
    role / team / tools / year are optional – leave them out to hide them. */
 export interface Project {
