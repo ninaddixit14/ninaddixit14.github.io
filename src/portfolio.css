@@ -8,8 +8,6 @@
   --accent: #5ef2ff;
   --hero-sky: #2a2150;
   --hero-shadow: 0 4px 30px rgba(30,18,60,.45);
-  --hud-text: rgba(241,242,246,.72);
-  --light-count: #ffd59e;
   --detail-copy: #d2d6e0;
   --area-line: rgba(94,242,255,.4);
   --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
@@ -36,14 +34,13 @@ body { margin: 0; background: var(--ink); color: var(--text); font-family: var(-
 .bar nav a { opacity: .75; transition: opacity .2s; }
 .bar nav a:hover { opacity: 1; }
 
-.hero { position: relative; height: calc(100svh - 32px); min-height: 600px; overflow: hidden; touch-action: pan-y; background: var(--hero-sky); }
+.hero { position: relative; height: calc(100svh - 32px); min-height: 600px; overflow: hidden; background: var(--hero-sky); }
 .hero h1, .hero .lede { text-shadow: var(--hero-shadow); }
-.hud { position: absolute; z-index: 3; left: 0; right: 0; bottom: calc(env(safe-area-inset-bottom, 0px) + 1.4rem); pointer-events: none; font-size: .85rem; color: var(--hud-text); }
-.hud .wrap { display: flex; justify-content: space-between; gap: .5rem 1.5rem; flex-wrap: wrap; }
-.hud p { margin: 0; }
-.hud .count { color: var(--light-count); font-weight: 500; }
-.game-controls { font-size: 1rem; }
-.game-controls span { margin-inline: .6rem; opacity: .5; }
+.hero-cue { position: absolute; z-index: 3; left: 0; right: 0; bottom: calc(env(safe-area-inset-bottom, 0px) + 1.2rem); display: flex; flex-direction: column; align-items: center; gap: .55rem; margin: 0; pointer-events: none; color: var(--muted); font-size: .74rem; letter-spacing: .22em; text-transform: uppercase; }
+.hero-cue i { position: relative; display: block; width: 1px; height: 42px; background: rgba(255,255,255,.14); overflow: hidden; }
+.hero-cue i::after { content: ""; position: absolute; left: 0; top: 0; width: 1px; height: 45%; background: linear-gradient(to bottom, transparent, var(--accent)); animation: cue-run 2.4s cubic-bezier(.4,0,.2,1) infinite; }
+@keyframes cue-run { 0% { transform: translateY(-100%); } 70%, 100% { transform: translateY(230%); } }
+@media (prefers-reduced-motion: reduce) { .hero-cue i::after { animation: none; } }
 .pf .hero-canvas { position: absolute; inset: 0; }
 .hero::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(to top, var(--ink) 0%, transparent 10%); }
 .hero-in { position: absolute; z-index: 2; left: 0; right: 0; top: 0; padding-top: calc(env(safe-area-inset-top, 0px) + 6.5rem); pointer-events: none; }

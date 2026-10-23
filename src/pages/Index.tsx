@@ -108,9 +108,8 @@ const Index = () => {
               </div>
             </div>
           </div>
+          <p className="hero-cue" aria-hidden="true"><span>Scroll</span><i></i></p>
         </section>
-
-        <p className="hero-cue" aria-hidden="true"><span>Scroll</span><i></i></p>
 
         <section className="index" id="work" aria-label="All projects">
           <div className="wrap index-grid">
