@@ -4,7 +4,8 @@ export type Shot =
   | { p: "video"; src: string; poster: string }
   | { p: "dusk"; seed: number; sun: number }
   | { p: "ember"; seed: number; fx: number }
-  | { p: "gray"; seed: number; z: number };
+  | { p: "gray"; seed: number; z: number }
+  | { p: "attract"; seed: number };
 
 type C = CanvasRenderingContext2D;
 
@@ -18,15 +19,25 @@ function rng(s: number) {
 }
 const TAU = Math.PI * 2;
 
+type RidgeParams = { p1: number; p2: number; p3: number; f1: number; f2: number; f3: number };
+
+function ridgeParams(r: () => number): RidgeParams {
+  return { p1: r() * TAU, p2: r() * TAU, p3: r() * TAU, f1: 1 + r() * 2, f2: 3 + r() * 4, f3: 9 + r() * 8 };
+}
+/** Height of a ridge layer at screen x, so figures can be drawn standing on it. */
+function ridgeY(x: number, w: number, h: number, base: number, amp: number, P: RidgeParams, shift: number) {
+  const u = (x + shift) / w;
+  const n = 0.55 * Math.sin(u * P.f1 * TAU + P.p1) + 0.3 * Math.sin(u * P.f2 * TAU + P.p2) + 0.15 * Math.sin(u * P.f3 * TAU + P.p3);
+  return h * base - (h * amp * (n + 1)) / 2;
+}
+const wrap = (v: number, m: number) => ((v % m) + m) % m;
+
 function ridge(c: C, w: number, h: number, base: number, amp: number, col: string, r: () => number, shift: number) {
-  const p1 = r() * TAU, p2 = r() * TAU, p3 = r() * TAU, f1 = 1 + r() * 2, f2 = 3 + r() * 4, f3 = 9 + r() * 8;
+  const P = ridgeParams(r);
   c.beginPath(); c.moveTo(0, h);
-  for (let x = 0; x <= w + 8; x += 6) {
-    const u = (x + shift) / w;
-    const n = 0.55 * Math.sin(u * f1 * TAU + p1) + 0.3 * Math.sin(u * f2 * TAU + p2) + 0.15 * Math.sin(u * f3 * TAU + p3);
-    c.lineTo(x, h * base - (h * amp * (n + 1)) / 2);
-  }
+  for (let x = 0; x <= w + 8; x += 6) c.lineTo(x, ridgeY(x, w, h, base, amp, P, shift));
   c.lineTo(w, h); c.closePath(); c.fillStyle = col; c.fill();
+  return P;
 }
 function vignette(c: C, w: number, h: number, k: number) {
   const g = c.createRadialGradient(w / 2, h / 2, Math.min(w, h) * 0.3, w / 2, h / 2, Math.max(w, h) * 0.75);
