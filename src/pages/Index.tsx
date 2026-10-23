@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import SceneCanvas from "@/components/SceneCanvas";
 import HeroPlatformer from "@/components/HeroPlatformer";
 import { Button } from "@/components/ui/button";
-import { PROJECTS, type Project } from "@/data/projects";
+import { PROJECTS, AWARDS, type Project } from "@/data/projects";
 
 /* Thumbnail columns: keep the rows as even as possible (4 shots read better as 2x2 than 3+1). */
 const COLS: Record<number, number> = { 1: 1, 2: 2, 3: 3, 4: 2, 5: 3, 6: 3, 7: 4, 8: 4 };
@@ -90,6 +90,7 @@ const Index = () => {
           <a className="mark" href="#top" aria-label="Ninad Dixit, back to top">ND</a>
           <nav aria-label="Main">
             <a href="#work">Work</a>
+            <a href="#awards">Awards</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
           </nav>
@@ -122,6 +123,26 @@ const Index = () => {
         </section>
 
         <div>{PROJECTS.map((p) => <ProjectSection key={p.id} p={p} />)}</div>
+
+        <section className="block awards" id="awards">
+          <div className="wrap">
+            <p className="awards-label">Achievements</p>
+            <h2>Recognised<br />by the jury</h2>
+            <ul className="award-list">
+              {AWARDS.map((a) => {
+                const head = a.category || a.ceremony;
+                const sub = a.category ? `${a.ceremony} · ${a.game}` : a.game;
+                return (
+                  <li className="award" key={`${a.ceremony}-${a.result}`}>
+                    <span className="award-mark" aria-hidden="true">{a.won ? "★" : "◆"}</span>
+                    <div><h5>{head}</h5><p>{sub}</p></div>
+                    <span className={`award-tag${a.won ? " win" : ""}`}>{a.result}</span>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </section>
 
         <section className="block" id="about">
           <div className="wrap about">
